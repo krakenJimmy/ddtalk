@@ -1,4 +1,4 @@
-package main
+package dingding
 
 import (
 	"bytes"
@@ -9,6 +9,7 @@ import (
 	"net/http"
 )
 
+// TextMsg comment
 type TextMsg struct {
 	MsgType string `json:"msgtype"`
 	Text    struct {
@@ -16,12 +17,13 @@ type TextMsg struct {
 	} `json:"text"`
 }
 
-func main() {
+// SendMsg comment
+func SendMsg(content string) {
 	requestData := TextMsg{
 		MsgType: "text",
 	}
 
-	requestData.Text.Content = "你该点外卖了"
+	requestData.Text.Content = content
 	requestBody, err := json.Marshal(requestData)
 	if err != nil {
 		log.Fatalln(err)
