@@ -13,6 +13,10 @@ func main() {
 		SendLinkMsg(word)
 	})
 
+	c.AddFunc("0 50 10 * * *", func() {
+		SendMsg("主人, 您该点外卖了")
+	})
+
 	c.Start()
 	t1 := time.NewTimer(time.Second * 10)
 	for {
