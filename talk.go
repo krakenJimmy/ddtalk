@@ -1,4 +1,4 @@
-package dingding
+package main
 
 import (
 	"bytes"
