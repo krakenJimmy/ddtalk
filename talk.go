@@ -47,7 +47,6 @@ func SendMsg(content string) {
 
 	requestData.Text.Content = content
 	requestBody, err := json.Marshal(requestData)
-	log.Fatalln(requestBody)
 	if err != nil {
 		log.Fatalln(err)
 	}
