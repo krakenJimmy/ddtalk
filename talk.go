@@ -20,7 +20,7 @@ type Word struct {
 	ImgURL string `json:"imgurl"`
 }
 
-// TextMsg comment
+// TextMsg 普通文本消息
 type TextMsg struct {
 	MsgType string `json:"msgtype"`
 	Text    struct {
@@ -39,7 +39,7 @@ type LinkMsg struct {
 	} `json:"link"`
 }
 
-// SendMsg comment
+// SendMsg 发送普通通知
 func SendMsg(content string) {
 	requestData := TextMsg{
 		MsgType: "text",
