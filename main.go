@@ -8,8 +8,9 @@ import (
 
 func main() {
 	c := cron.New()
-	c.AddFunc("5 * * * * *", func() {
-		SendMsg("今天吃外卖了吗")
+	c.AddFunc("0 10 15 * * *", func() {
+		word := GetWord()
+		SendLinkMsg(word)
 	})
 
 	c.Start()
