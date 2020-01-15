@@ -9,6 +9,8 @@ import (
 	"net/http"
 )
 
+const token = "22a2283ed16a26c5470b085553e7771b2fa4f4f4e90b611e63669ac80285f8d7"
+
 // Word 名言结构体
 type Word struct {
 	Code   string `json:"code"`
@@ -50,7 +52,7 @@ func SendMsg(content string) {
 		log.Fatalln(err)
 	}
 
-	resp, err := http.Post("https://oapi.dingtalk.com/robot/send?access_token=6f1369f41eb0b124263ceb458d9cceedd4a85c36c9962ade594af1db92f55fd9", "application/json", bytes.NewBuffer(requestBody))
+	resp, err := http.Post("https://oapi.dingtalk.com/robot/send?access_token="+token, "application/json", bytes.NewBuffer(requestBody))
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -82,7 +84,7 @@ func SendLinkMsg(word Word) {
 		log.Fatalln(err)
 	}
 
-	resp, err := http.Post("https://oapi.dingtalk.com/robot/send?access_token=6f1369f41eb0b124263ceb458d9cceedd4a85c36c9962ade594af1db92f55fd9", "application/json", bytes.NewBuffer(requestBody))
+	resp, err := http.Post("https://oapi.dingtalk.com/robot/send?access_token="+token, "application/json", bytes.NewBuffer(requestBody))
 	if err != nil {
 		log.Fatalln(err)
 	}
