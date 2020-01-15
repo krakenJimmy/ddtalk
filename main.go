@@ -8,7 +8,7 @@ import (
 
 func main() {
 	c := cron.New()
-	c.AddFunc("0 10 15 * * *", func() {
+	c.AddFunc("0 0 10 * * *", func() {
 		word := GetWord()
 		SendLinkMsg(word)
 	})
