@@ -13,7 +13,7 @@ func main() {
 		SendLinkMsg(word)
 	})
 
-	c.AddFunc("0 50 10 * * *", func() {
+	c.AddFunc("* * * * * *", func() {
 		SendMsg("主人, 您该点外卖了")
 	})
 
