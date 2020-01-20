@@ -1,3 +1,3 @@
 FROM busybox
-COPY ./ddtalk /apps
-CMD ["/ddtalk"]
+COPY ./ddtalk /home/
+CMD /home/ddtalk
